@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Herupa | Covid Helper</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link href="assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets1/img/icon.png" rel="apple-touch-icon">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets1/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets1/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="../assets1/vendor/aos/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets1/css/style.css" rel="stylesheet">
+    <!--loader script -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+  </head>
+  <body class="bodyback">
+    <header id="header">
+      <div class="container d-flex">
+
+        <div class="logo mr-auto">
+          <h1 class="text-light"><a href="/">HERUPA<span>.</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets1/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="/"><a href="/#header">Home</a></li>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/livedata">Live Stats</a></li>
+            <li><a href="/#team">Team</a></li>
+            <li><a href="/#contact">Contact Us</a></li>
+            <li class="get-started"><a href="/users/login">Login</a></li>
+            <li class="get-started"><a href="/users/register">Sign Up</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+
+      </div>
+    </header>
+
+      <div class="row">
+           <div class="col-md-2 col-sm-4">
+             <div class="card sidenav container topmargin">
+                 <button type="button" id="toogle" class="btn btn-success">Search on/off</button>
+             </div>
+           </div>
+        <div class="col-sm-md-10 col-sm-8">
+          <div class="margins">
+
+           <div id="charts">
+          <div class="card topmargin">
+            <table id="t2" class="table-striped table-bordered">
+                 <thead>
+                   <tr>
+                     <td>Active</td>
+                     <td>New Cases</td>
+                     <td>Recent Deaths</td>
+                     <td>Total Deaths</td>
+                     <td>Critical Patients</td>
+                     <td>Affected Countries</td>
+                   </tr>
+                 </thead>
+            </table>
+          </div>
+          <div class="card topmargin" >
+            <div id="chartContainer" style="width:100%; height:300px;" class="margins"></div>
+          </div>
+          <div class="card topmargin">
+            <table id="t1" class="table-striped table-bordered ">
+                 <thead>
+                   <tr>
+                     <td>State</td>
+                     <td>Reported Cases</td>
+                     <td>Discharged</td>
+                     <td>Deaths</td>
+                   </tr>
+                 </thead>
+            </table>
+          </div>
+
+        </div>
+        <div id="searchon" class="togglesearch topmargin container" >
+
+         <div>
+           <input type="text" id="search" class="form-control"  >
+         <button type="button" id="searching" class="btn btn-success" style="display:inline;">search</button>
+       </div>
+       <div id="error" class="notfound card">
+            <i class="fas fa-exclamation-triangle"></i>Sorry no data found! Try using different name for country (for eg: US for USA)
+       </div>
+       <div class="table3off" id="ctoff">
+         <div  id="livechart" class="card topmargin" ></div>
+
+         <div class="card topmargin" >
+          <table id="table3" style="margin-top:10px; widht:100%;" class="table-striped table-bordered   table3">
+              <thead>
+                <td>Date</td>
+                <td>confirmed</td>
+                <td>Deaths</td>
+                <td>Recovered</td>
+              </thead>
+       </table>
+     </div>
+
+       </div>
+
+
+         </div>
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+   <script type="text/javascript" src="/live_styles/live.js"></script>
+
+  </body>
+</html>

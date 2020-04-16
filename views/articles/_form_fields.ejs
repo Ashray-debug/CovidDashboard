@@ -1,0 +1,71 @@
+<style>
+  label {
+    color: white;
+  }
+
+  .form-group {
+    margin-top: 50px;
+    background: transparent;
+    color: white;
+  }
+
+  textarea {
+    min-height: 100px;
+    background: transparent;
+    color: white;
+    outline: none;
+    border: none;
+  }
+
+  textarea:focus {
+    background: transparent;
+  }
+
+  #description {
+    min-height: 10px;
+  }
+  h6 {
+    color: #fd6334;
+  }
+  .form-control {
+    background: rgb(32, 65, 94);
+    border-radius: 30px;
+    border: 2px solid #fdc134;
+    color: white;
+  }
+  .newarticle {
+    background: rgb(32, 65, 94);
+    border-radius: 30px;
+    border: 2px solid #fdc134;
+    padding: 10px 30px;
+    margin: 20px 10px;
+  }
+</style>
+<div class="form-group">
+  <label for="title">Title</label>
+  <input
+    required
+    value="<%= article.title %>"
+    type="text"
+    name="title"
+    id="title"
+    class="form-control"
+  />
+</div>
+<div class="form-group">
+  <label for="description">Description</label>
+  <textarea name="description" id="description" class="form-control">
+<%= article.description %></textarea
+  >
+</div>
+<div class="form-group">
+  <label for="markdown">Markdown</label>
+  <textarea required name="markdown" id="markdown" class="form-control">
+<%= article.markdown %></textarea
+  >
+</div>
+<h6>
+  Please recheck the submission. You won't be able to modify it later.
+</h6>
+<a href="/" class="btn btn-danger newarticle">Cancel</a>
+<button type="submit" class="btn btn-primary newarticle">Save</button>

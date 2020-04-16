@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-color: rgb(32, 65, 94);
+        height: 100%;
+      }
+
+      .createNew {
+        text-align: center;
+      }
+
+      .title {
+        margin-top: 100px;
+        text-align: center;
+        color: #fdc134;
+        letter-spacing: 2px;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .newarticle {
+        left: 50%;
+      }
+
+      .card-body,
+      .card {
+        background: rgb(32, 65, 94);
+        border-radius: 30px;
+        border: 2px solid #fdc134;
+        color: white;
+      }
+
+      .newarticle {
+        background: rgb(32, 65, 94);
+        border-radius: 30px;
+        border: 2px solid #fdc134;
+        padding: 10px 30px;
+        margin: 20px 0;
+      }
+
+      .card-title {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+      .readmore {
+        background: rgb(32, 65, 94);
+        border-radius: 30px;
+        border: 2px solid #fdc134;
+        padding: 5px 30px;
+        margin-top: 15px;
+      }
+
+      .card-subtitle {
+        color: #fdc134;
+      }
+
+      .footer {
+        background: black;
+        padding: 20px 0;
+        color: white;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        text-align: center;
+        margin-top: 200px;
+      }
+
+      .footer > h5 > span {
+        color: #fdc134;
+      }
+      .login100-pic {
+        display: block;
+        margin: auto;
+        width: 316px;
+      }
+      .login100-pic img {
+        max-width: 100%;
+      }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-4 title">CoWin Blog</h1>
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="img-01.png" />
+      </div>
+      <div class="createNew">
+        <a href="/articles/new" class="btn btn-success newarticle"
+          >Add Your Article</a
+        >
+      </div>
+
+      <% articles.forEach(article => { %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h4 class="card-title"><%= article.title %></h4>
+          <div class="card-subtitle mb-2">
+            <%= article.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text mb-2"><%= article.description %></div>
+          <a
+            href="articles/<%= article.slug %>"
+            class="btn btn-primary readmore"
+            >Read More</a
+          >
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <%- include('footer.ejs') %>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.js"></script>
+  </body>
+</html>

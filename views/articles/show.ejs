@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blog</title>
+    <style>
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(32, 65, 94);
+      }
+
+      h1 {
+        text-align: center;
+        margin: 50px 0px;
+        color: #fdc134;
+      }
+
+      .center {
+        text-align: center;
+        color: white;
+      }
+
+      .newarticle {
+        background: rgb(32, 65, 94);
+        border-radius: 30px;
+        border: 2px solid #fdc134;
+        padding: 10px 30px;
+        margin: 20px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .markdown {
+        color: white;
+        min-height: 100px;
+      }
+
+      .footer {
+        background: black;
+        padding: 20px 0;
+        color: white;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+      }
+
+      .footer > h5 > span {
+        color: #fdc134;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-1"><%= article.title %></h1>
+      <div class="center mb-2">
+        <%= article.createdAt.toLocaleDateString() %>
+      </div>
+      <a href="/" class="btn btn-success newarticle center">Back to HomePage</a>
+      <div class="markdown">
+        <%- article.sanitizedHtml %>
+      </div>
+    </div>
+    <%- include('footer.ejs') %>
+  </body>
+</html>
